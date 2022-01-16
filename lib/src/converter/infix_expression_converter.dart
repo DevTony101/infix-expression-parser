@@ -1,5 +1,5 @@
-import 'utils.dart';
-import 'node.dart';
+import '../utils/utils.dart';
+import '../binary_tree/node.dart';
 import 'package:stack/stack.dart';
 
 class InfixExpressionConverter {

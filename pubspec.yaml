@@ -1,4 +1,4 @@
-name: infix_expression_tree_converter
+name: infix_expression_converter
 description: A command line app used to convert an infix expression into its postfix and prefix notations.
 version: 1.0.0
 
