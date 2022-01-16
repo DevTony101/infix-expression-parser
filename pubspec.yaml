@@ -1,15 +1,12 @@
 name: infix_expression_converter
-description: A command line app used to convert an infix expression into its postfix and prefix notations.
+description: A package used to convert an infix expression into its postfix and prefix notations.
 version: 1.0.0
 
 environment:
   sdk: '>=2.15.1'
 
-#dependencies:
-#  path: ^1.7.0
-
 dev_dependencies:
   pedantic: ^1.9.0
+  test: ^1.20.1
 dependencies: 
   stack: ^0.2.1
-  test: ^1.20.1
