@@ -1,15 +1,15 @@
-import '../utils/utils.dart';
 import '../binary_tree/node.dart';
 import 'package:stack/stack.dart';
+import 'package:string_validator/string_validator.dart';
 
 class InfixExpressionConverter {
-  late final String expression;
+  late final String _expression;
   late final Map _operatorsPriority;
   late final Node _root;
   late String _prefixNotation, _postfixNotation;
 
   InfixExpressionConverter({required String expression}) {
-    this.expression = '($expression)';
+    _expression = '($expression)';
     _operatorsPriority = {')': 0, '+': 1, '-': 1, '/': 2, '*': 2, '^': 3};
     _root = _buildTree();
   }
@@ -43,14 +43,14 @@ class InfixExpressionConverter {
   }
 
   Node _buildTree() {
-    final tokens = expression.split('');
+    final tokens = _expression.split('');
     final nodeStack = Stack<Node>();
     final charStack = Stack<String>();
     Node? currentNode, rightSibling, leftSibling;
     for (var token in tokens) {
       if (token == '(') {
         charStack.push(token);
-      } else if (Utils.isNumber(string: token)) {
+      } else if (isAlpha(token)) {
         currentNode = Node.fromData(data: token);
         nodeStack.push(currentNode);
       } else if (_getPriority(token) > 0) {
