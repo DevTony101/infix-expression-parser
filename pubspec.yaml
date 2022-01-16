@@ -1,5 +1,5 @@
-name: expression_binary_tree
-description: A command line app used to convert an expression into its postfix and prefix notations.
+name: infix_expression_tree_converter
+description: A command line app used to convert an infix expression into its postfix and prefix notations.
 version: 1.0.0
 
 environment:
