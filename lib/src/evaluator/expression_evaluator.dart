@@ -1,21 +1,23 @@
 import 'dart:math';
-import '../utils/utils.dart';
+
 import 'package:stack/stack.dart';
+import 'package:string_validator/string_validator.dart';
 
 class ExpressionEvaluator {
-  static num evaluatePostfix({required String expression}) {
-    return _evaluate(expression.split(''), reverseOperands: true);
+
+  static num evaluatePostfix({required String expression, required Map context}) {
+    return _evaluate(expression.split(''), context: context, reverseOperands: true);
   }
 
-  static num evaluatePrefix({required String expression}) {
-    return _evaluate(expression.split('').reversed.toList());
+  static num evaluatePrefix({required String expression, required Map context}) {
+    return _evaluate(expression.split('').reversed.toList(), context: context);
   }
 
-  static num _evaluate(List<String> tokens, {bool reverseOperands = false}) {
+  static num _evaluate(List<String> tokens, {required Map context, bool reverseOperands = false}) {
     final resultStack = Stack<num>();
     for (var token in tokens) {
-      if (Utils.isNumber(string: token)) {
-        resultStack.push(num.parse(token));
+      if (isAlpha(token)) {
+        resultStack.push(context[token]);
       } else {
         final a = resultStack.pop(), b = resultStack.pop();
         if (token == '+') {
