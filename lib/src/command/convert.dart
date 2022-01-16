@@ -1,5 +1,5 @@
 import 'package:args/command_runner.dart';
-import 'package:infix_expression_converter/src/converter/infix_expression_converter.dart';
+import 'package:infix_expression_parser/src/converter/infix_expression_converter.dart';
 
 class ConvertCommand extends Command {
   @override

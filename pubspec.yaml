@@ -1,4 +1,4 @@
-name: infix_expression_converter
+name: infix_expression_parser
 description: A package used to convert an infix expression into its postfix and prefix notations.
 version: 1.0.0
 
