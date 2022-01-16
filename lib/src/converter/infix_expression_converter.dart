@@ -14,13 +14,13 @@ class InfixExpressionConverter {
     _root = _buildTree();
   }
 
-  String getPostfixNotation() {
+  String toPostfixNotation() {
     _postfixNotation = '';
     _postOrderTraversal(_root);
     return _postfixNotation;
   }
 
-  String getPrefixNotation() {
+  String toPrefixNotation() {
     _prefixNotation = '';
     _preOrderTraversal(_root);
     return _prefixNotation;
