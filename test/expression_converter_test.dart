@@ -1,4 +1,4 @@
-import 'package:infix_expression_parser/src/converter/infix_expression_converter.dart';
+import 'package:infix_expression_parser/infix_expression_converter.dart';
 import 'package:test/test.dart';
 
 void main() {

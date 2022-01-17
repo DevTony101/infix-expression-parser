@@ -1,4 +1,4 @@
-import '../binary_tree/node.dart';
+import 'src/binary_tree/node.dart';
 import 'package:stack/stack.dart';
 import 'package:string_validator/string_validator.dart';
 

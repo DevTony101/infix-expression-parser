@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:test/test.dart';
-import 'package:infix_expression_parser/src/converter/infix_expression_converter.dart';
-import 'package:infix_expression_parser/src/evaluator/expression_evaluator.dart';
+import 'package:infix_expression_parser/infix_expression_converter.dart';
+import 'package:infix_expression_parser/expression_evaluator.dart';
 
 void main() {
   group('Postfix Evaluator', () {
