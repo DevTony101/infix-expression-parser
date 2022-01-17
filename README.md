@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/github/license/DevTony101/infix-expression-parser?style=flat-square)](https://github.com/DevTony101/gasteroids/blob/main/LICENSE)
+
 A dart package to help you parse and evaluate infix mathematical expressions into their prefix and postfix notations.
 
 ## Features
