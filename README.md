@@ -20,49 +20,55 @@ The package exposes two main classes:
 ```dart
 import 'package:infix_expression_parser/infix_expression_converter.dart';
 
-// Provide an infix expression
-const infixExpression = '(a-b+c)*(d+e*f)';
+void main() {
+  // Provide an infix expression
+  const infixExpression = '(a-b+c)*(d+e*f)';
 
-// Create an instance of InfixExpressionConverter
-final converter = InfixExpressionConverter(expression: infixExpression);
+  // Create an instance of InfixExpressionConverter
+  final converter = InfixExpressionConverter(expression: infixExpression);
 
-final postfixExpression = converter.toPostfixNotation();
-final prefixExpression = converter.toPrefixNotation();
+  final postfixExpression = converter.toPostfixNotation();
+  final prefixExpression = converter.toPrefixNotation();
 
-print(postfixExpression); // ab-c+def*+*
-print(prefixExpression); // *+-abc+d*ef
+  print(postfixExpression); // ab-c+def*+*
+  print(prefixExpression); // *+-abc+d*ef
+}
 ```
 
 #### Example #2: Evaluating a postfix expression
 ```dart
 import 'package:infix_expression_parser/expression_evaluator.dart';
 
-// Define a context map
-const context = {'a': 2, 'b': 3, 'c': 4, 'd': 5};
+void main() {
+  // Define a context map
+  const context = {'a': 2, 'b': 3, 'c': 4, 'd': 5};
 
-// Provide a postfix expression
-const postfixExpression = 'abc+*d/';
+  // Provide a postfix expression
+  const postfixExpression = 'abc+*d/';
 
-// Use the static method provided by the ExpressionEvaluator class and pass both the expression and the context
-final value = ExpressionEvaluator.evaluatePostfix(expression: postfixExpression, context: context);
+  // Use the static method provided by the ExpressionEvaluator class and pass both the expression and the context
+  final value = ExpressionEvaluator.evaluatePostfix(expression: postfixExpression, context: context);
 
-print(value); // 2.8
+  print(value); // 2.8
+}
 ```
 
 #### Example #3: Evaluating a prefix expression
 ```dart
 import 'package:infix_expression_parser/expression_evaluator.dart';
 
-// Define a context map
-const context = {'a': 2, 'b': 3, 'c': 4, 'd': 5, 'e': 6};
+void main() {
+  // Define a context map
+  const context = {'a': 2, 'b': 3, 'c': 4, 'd': 5, 'e': 6};
 
-// Provide a postfix expression
-const prefixExpression = '*-a/bc-/ade';
+  // Provide a postfix expression
+  const prefixExpression = '*-a/bc-/ade';
 
-// Use the static method provided by the ExpressionEvaluator class and pass both the expression and the context
-final value = ExpressionEvaluator.evaluatePrefix(expression: prefixExpression, context: context);
+  // Use the static method provided by the ExpressionEvaluator class and pass both the expression and the context
+  final value = ExpressionEvaluator.evaluatePrefix(expression: prefixExpression, context: context);
 
-print(value); // -7.0
+  print(value); // -7.0
+}
 ```
 
 #### Example #4: Evaluating an infix expression
@@ -70,20 +76,22 @@ print(value); // -7.0
 import 'package:infix_expression_parser/infix_expression_converter.dart';
 import 'package:infix_expression_parser/expression_evaluator.dart';
 
-// Provide an infix expression
-const infixExpression = 'a-b+c-d*e';
+void main() {
+  // Provide an infix expression
+  const infixExpression = 'a-b+c-d*e';
 
-// Convert it to either its postfix or prefix notation
-final converter = InfixExpressionConverter(expression: infixExpression);
-final postfixExpression = converter.toPostfixNotation();
+  // Convert it to either its postfix or prefix notation
+  final converter = InfixExpressionConverter(expression: infixExpression);
+  final postfixExpression = converter.toPostfixNotation();
 
-// Define a context map
-const context = {'a': 2, 'b': 3, 'c': 4, 'd': 5, 'e': 6};
+  // Define a context map
+  const context = {'a': 2, 'b': 3, 'c': 4, 'd': 5, 'e': 6};
 
-// Use the static method provided by the ExpressionEvaluator class and pass both the expression and the context
-final value = ExpressionEvaluator.evaluatePostfix(expression: postfixExpression, context: context);
+  // Use the static method provided by the ExpressionEvaluator class and pass both the expression and the context
+  final value = ExpressionEvaluator.evaluatePostfix(expression: postfixExpression, context: context);
 
-print(value); // -27.0
+  print(value); // -27.0
+}
 ```
 
 ### As a CLI tool
